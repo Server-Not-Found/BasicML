@@ -7,10 +7,6 @@ from flanker import mime
 from sklearn.model_selection import train_test_split
 from tqdm import tqdm
 
-root_path = r'/home/caijunhong/ml/BayesClassi'
-chinese_email_path = r'/home/caijunhong/ml/BayesClassi/chinese_email'
-english_email_path = r'/home/caijunhong/ml/BayesClassi/english_email'
-
 # 用于导出单个邮件的重要信息
 def emlAnalyse(email_path):
     emlContent = [] #创建包含发件人，收件人，主题，发送时间，内容等要素的列表
@@ -270,11 +266,17 @@ def TrainTestSpam(checkpointPath,train_rate,test_rate,random_seed,vocabList,trai
     print("测试集分类正确率："+str(accuracy))
 
 if __name__ == '__main__':
+    
+    root_path = r'/home/caijunhong/ml/BayesClassi'
+    chinese_email_path = r'/home/caijunhong/ml/BayesClassi/chinese_email'
+    english_email_path = r'/home/caijunhong/ml/BayesClassi/english_email'
+    
     # 将数据集转换成CSV格式，只需要执行一次
-    # csvTransformer()
+    # csvTransformer()    
+    
     trainBeforeTest = 1 # 0表示调用已经训练好的模型 1表示重新训练一次模型
     random_seed = 12    # 划分数据集的随机种子
-    train_rate = 0.3    # 训练集占总数据集的比例
+    train_rate = 0.1    # 训练集占总数据集的比例
     test_rate = 0.01    # 训练集占总数据集的比例
     checkpointPath = root_path + r"/checkpoint_30train.csv"  # 保存模型参数的文件地址
     vocabFilePath = root_path + r'/vocabList.txt'
