@@ -1,6 +1,12 @@
 # 基于贝叶斯的垃圾邮件分类器
 
-## 1.安装相关依赖
+## 数据集
+
+TREC 2006 Spam Track Public Corpora公开数据集
+
+下载链接：https://plg.uwaterloo.ca/~gvcormac/treccorpus06/about.html
+
+## 安装相关依赖
 
 进入根目录，执行以下命令安装所需要导入的包
 
@@ -8,7 +14,7 @@
 pip install -r requirements
 ```
 
-## 2.清洗数据得到CSV格式的数据集
+## 清洗数据得到CSV格式的数据集
 
 ```python
 if __name__ == '__main__':
@@ -20,7 +26,7 @@ main函数中只用执行`csvTransformer()`函数就能对原生数据集进行�
 
 运行过后会产生`mailEnglish.csv`，即为清洗后的数据，数据结构已经整理成DataFrame了。
 
-## 3.训练与测试
+## 训练与测试
 
 根据自身情况调整好根目录的地址，如下所示：
 
@@ -46,6 +52,12 @@ main函数中只用执行`csvTransformer()`函数就能对原生数据集进行�
 需要注意，设置不同的训练集比例将会生成不一样的语料表，因此需要自行设置语料表的存储地址，以免测试产生偏差。
 
 
+
+开始训练：
+
+```shell
+python email\ classification.py
+```
 
 训练与测试过程样例：
 
