@@ -1,4 +1,5 @@
 # 支持向量机练习
+本练习参考了bilibili视频：https://www.bilibili.com/video/BV1TZ4y187qX?p=119	部分代码有所变动
 
 ## 基本支持向量机
 
